@@ -108,14 +108,14 @@ const apps = [
     },
     {
         title: "Contacts",
-        icon: "./ui/default/racing-car.png",
+        icon: "./ui/default/document.png",
         srcdoc: "",
         src: "./pages/contacts.html",
         windows_open: 0
     },
     {
         title: "Hidden",
-        icon: "./ui/default/racing-car.png",
+        icon: "./ui/default/document.png",
         srcdoc: "",
         src: "./pages/index.html",
         windows_open: 0,
