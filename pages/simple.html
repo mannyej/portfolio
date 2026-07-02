@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplified Portfolio</title>
+    <link rel="stylesheet" href="./css/simple.css">
+</head>
+
+<body>
+    <div id="navBar">
+        <div id="hero-container" class="hero-cont">
+            <h1 id="hero-header">WELCOME</h1>
+        </div>
+
+        <div class="hero-cont" id="hero-links">
+            <div class="hero-cont hero-link-cont" id="quickLinks">
+                <button class="hero-btn single" data-target="#aboutMe">Profile</button>
+            </div>
+
+            <div class="hero-cont hero-link-cont">
+                <button class="hero-btn single" data-target="#systemOverview">System</button>
+                <button class="hero-btn single" data-target="#projectSummary">Projects</button>
+                <button class="hero-btn single" data-target="#skillsSummary">Skills</button>
+            </div>
+
+            <div class="hero-cont hero-link-cont">
+                <button class="hero-btn single" data-target="#roadmapSummary">Roadmap</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="hero-cont" id="aboutMe">
+        <div class="hero-cont hero-link-cont aboutme" id="card">
+            <h4 class="about-header general-text">ABOUT ME</h4>
+            <div class="profile-block">
+                <div class="profile-badge general-text">NV</div>
+                <div class="profile-meta">
+                    <p class="general-text">Name: Portfolio Creator</p>
+                    <p class="general-text">Role: Frontend / Interactive UI Builder</p>
+                    <p class="general-text">Base: Browser-based OS workspace</p>
+                </div>
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/8608/8608769.png" alt="Profile Icon" id="aboutMeP">
+        </div>
+
+        <div class="hero-cont hero-link-cont aboutme" id="card2">
+            <h4 class="about-header general-text">INTRODUCTION</h4>
+            <p class="general-text intro-copy">This is the readable version of the full portfolio OS simulator.</p>
+            <p class="general-text intro-copy">The main build turns the portfolio into a desktop with launchable apps,
+                draggable windows, audio feedback, and focused project pages.</p>
+            <p class="general-text intro-copy">This page keeps the same identity, but presents the information in a
+                direct scrollable format.</p>
+            <div class="tag-stack">
+                <span class="tag general-text">JavaScript</span>
+                <span class="tag general-text">Window UI</span>
+                <span class="tag general-text">Animation</span>
+                <span class="tag general-text">Portfolio OS</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="summary-shell">
+        <section class="summary-section" id="systemOverview">
+            <div class="section-heading">
+                <p class="eyebrow">Core Experience</p>
+                <h2>OS Simulator Portfolio</h2>
+            </div>
+            <div class="feature-grid">
+                <article class="summary-card featured-card">
+                    <span class="card-kicker">Main Build</span>
+                    <h3>Desktop-style portfolio</h3>
+                    <p>A web portfolio presented like an operating system: users enter through a welcome cover, open
+                        apps from the dock, and move through content inside window panels.</p>
+                </article>
+                <article class="summary-card">
+                    <span class="card-kicker">Interaction</span>
+                    <h3>Window manager</h3>
+                    <p>App panels support dragging, resizing, minimizing, maximizing, restoring, and closing.</p>
+                </article>
+                <article class="summary-card">
+                    <span class="card-kicker">Atmosphere</span>
+                    <h3>Motion and audio</h3>
+                    <p>Typing effects, opening animations, and navigation sounds make the interface feel more alive.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="summary-section" id="appDirectory">
+            <div class="section-heading">
+                <p class="eyebrow">Launcher</p>
+                <h2>Current Apps</h2>
+            </div>
+            <div class="app-list">
+                <article class="app-row">
+                    <strong>Settings</strong>
+                    <span>Standalone controls page for portfolio preferences and workspace adjustments.</span>
+                </article>
+                <article class="app-row">
+                    <strong>Mastery</strong>
+                    <span>A focused skill snapshot covering design, frontend craft, audio, and storytelling.</span>
+                </article>
+                <article class="app-row">
+                    <strong>Simplified</strong>
+                    <span>This readable summary page for visitors who want the portfolio without the OS layer.</span>
+                </article>
+                <article class="app-row">
+                    <strong>Projects</strong>
+                    <span>Project gallery powered by shared project data and reusable card rendering.</span>
+                </article>
+                <article class="app-row">
+                    <strong>Games</strong>
+                    <span>Embedded playable pages used to make the desktop feel like an active environment.</span>
+                </article>
+                <article class="app-row">
+                    <strong>App Store</strong>
+                    <span>A curated gallery of portfolio experiences and interface tools built for the OS theme.</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="summary-section" id="projectSummary">
+            <div class="section-heading">
+                <p class="eyebrow">Portfolio Work</p>
+                <h2>Featured Projects</h2>
+            </div>
+            <div class="project-summary-grid">
+                <article class="summary-card">
+                    <span class="card-kicker">Build</span>
+                    <h3>OS Simulator</h3>
+                    <p>A polished web-based desktop environment with interactive windows, navigation, and a futuristic
+                        presentation style.</p>
+                    <div class="mini-tags"><span>web</span><span>interactive</span><span>favorite</span></div>
+                </article>
+                <article class="summary-card">
+                    <span class="card-kicker">System</span>
+                    <h3>Window System</h3>
+                    <p>A reusable window manager powering draggable, resizable, minimizable, and maximizable app panels.
+                    </p>
+                    <div class="mini-tags"><span>javascript</span><span>ui</span><span>desktop</span></div>
+                </article>
+                <article class="summary-card">
+                    <span class="card-kicker">Tool</span>
+                    <h3>Typewriter Effects</h3>
+                    <p>A lightweight animation module for dynamic text reveals, transitions, and intro moments.</p>
+                    <div class="mini-tags"><span>animation</span><span>utility</span><span>ui</span></div>
+                </article>
+                <article class="summary-card">
+                    <span class="card-kicker">Experience</span>
+                    <h3>Audio Navigation</h3>
+                    <p>Sound-driven feedback that adds a more immersive layer to opening and closing windows.</p>
+                    <div class="mini-tags"><span>audio</span><span>feedback</span><span>mood</span></div>
+                </article>
+                <article class="summary-card">
+                    <span class="card-kicker">App</span>
+                    <h3>Settings Hub</h3>
+                    <p>A compact app view designed for toggles, preferences, and future portfolio controls.</p>
+                    <div class="mini-tags"><span>settings</span><span>dashboard</span><span>web</span></div>
+                </article>
+                <article class="summary-card">
+                    <span class="card-kicker">Concept</span>
+                    <h3>File Handler Concept</h3>
+                    <p>An experiment exploring how browser-based local file interactions could feel inside the desktop.
+                    </p>
+                    <div class="mini-tags"><span>files</span><span>concept</span><span>experimental</span></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="summary-section split-section" id="skillsSummary">
+            <div>
+                <div class="section-heading">
+                    <p class="eyebrow">Mastery</p>
+                    <h2>Skill Matrix</h2>
+                </div>
+                <div class="skill-stack">
+                    <div><strong>Visual Design</strong><span>Advanced</span></div>
+                    <div><strong>Interaction Design</strong><span>Advanced</span></div>
+                    <div><strong>Frontend Development</strong><span>Intermediate</span></div>
+                    <div><strong>Audio Experience</strong><span>Growing</span></div>
+                    <div><strong>Storytelling</strong><span>Advanced</span></div>
+                </div>
+            </div>
+            <article class="summary-card featured-card">
+                <span class="card-kicker">Current Focus</span>
+                <h3>Crafting immersive digital worlds</h3>
+                <p>The portfolio emphasizes clear layouts, modular JavaScript, tactile motion, and a playful desktop
+                    metaphor that makes browsing feel exploratory.</p>
+            </article>
+        </section>
+
+        <section class="summary-section" id="roadmapSummary">
+            <div class="section-heading">
+                <p class="eyebrow">Next Steps</p>
+                <h2>Roadmap</h2>
+            </div>
+            <div class="roadmap-grid">
+                <article class="summary-card">
+                    <h3>Polish</h3>
+                    <progress value="78" max="100"></progress>
+                    <p>Tighten layout consistency, window behavior, and visual details across app pages.</p>
+                </article>
+                <article class="summary-card">
+                    <h3>Animation</h3>
+                    <progress value="64" max="100"></progress>
+                    <p>Add smoother state changes, launch moments, and transitions between portfolio areas.</p>
+                </article>
+                <article class="summary-card">
+                    <h3>Content</h3>
+                    <progress value="52" max="100"></progress>
+                    <p>Keep building out project descriptions, case-study detail, and app-specific pages.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom Cursor Overlay -->
+    <div id="cursorCont">
+        <img src="https://www.pngarts.com/files/3/Computer-Mouse-Cursor-Free-PNG-Image.png" alt="Cursor Graphics">
+    </div>
+
+    <script src="./scripts/simplified.js"></script>
+</body>
+
+</html>

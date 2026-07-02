@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(0, 7, 37);
+    color: white;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.defaultCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Sophisticated semi-transparent border */
+    border: solid rgba(255, 255, 255, 0.08) 1px;
+    background: rgba(255, 255, 255, 0.02);
+    /* Backdrop blur creates a high-end glassmorphism overlay effect */
+    backdrop-filter: blur(8px);
+    /* Keeps layout tight on wider screens */
+    transition: all 0.3s ease;
+}
+
+.defaultContS::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid rgba(58, 116, 152, 0.6);
+    border-left: 2px solid rgba(58, 116, 152, 0.6);
+}
+
+.header {
+    width: 100%;
+}
+
+form {
+    width: 100%;
+    border: solid rgba(255, 255, 255, 0.338) 10px;
+}
+
+.header-text::before {
+    display: flex;
+    content: "";
+    width: 3px;
+    height: 1.2em;
+    background-color: #3a7498;
+    position: absolute;
+    right: 470px;
+    /* Positioned at the end of text */
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 8px #3a7498;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}

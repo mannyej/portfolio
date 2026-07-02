@@ -1,0 +1,523 @@
+﻿:root {
+    color-scheme: dark;
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background:
+        radial-gradient(circle at 20% 6%, rgba(92, 122, 255, 0.18), transparent 30rem),
+        radial-gradient(circle at 92% 46%, rgba(86, 92, 210, 0.13), transparent 22rem),
+        linear-gradient(135deg, #070d16 0%, #0a101b 44%, #111324 100%);
+    background-attachment: fixed;
+    color: #e8edf8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: clamp(1rem, 4vw, 2.5rem);
+    overflow: hidden;
+    background: url("./assets/images/backgrounds/0921cb27d5604b464218a64ae88a3f43c7b7371a.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: desktop 1s ease forwards;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(126, 150, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(126, 150, 255, 0.035) 1px, transparent 1px);
+    background-size: 18px 18px;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 100%);
+}
+
+
+
+button {
+    font: inherit;
+}
+
+.desktop {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+}
+
+.app-window {
+    border: 1px solid rgba(113, 135, 190, 0.38);
+    border-radius: 8px;
+    background:
+        linear-gradient(180deg, rgba(39, 53, 96, 0.393) 0%, rgba(12, 16, 27, 0.96) 100%),
+        rgba(9, 13, 22, 0.377);
+    box-shadow:
+        0 28px 78px rgba(0, 0, 0, 0.54),
+        0 0 0 1px rgba(255, 255, 255, 0.025) inset,
+        0 18px 58px rgba(68, 91, 180, 0.13);
+    overflow: hidden;
+    backdrop-filter: blur(22px) saturate(130%);
+    transform-style: preserve-3d;
+}
+
+.window-header {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 26px 0 28px;
+    border-bottom: 1px solid rgba(120, 133, 168, 0.12);
+    background: rgba(28, 32, 45, 0.64);
+    color: rgba(234, 238, 248, 0.84);
+    cursor: move;
+
+}
+
+.window-title {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.window-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.control-btn {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: rgba(219, 225, 238, 0.62);
+    cursor: pointer;
+}
+
+.control-btn i {
+    font-size: 15px;
+    display: block;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.055);
+    color: rgba(246, 248, 255, 0.86);
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.055);
+    color: rgba(246, 248, 255, 0.86);
+}
+
+.window-frame-wrap {
+    margin: 14px 16px 16px;
+    height: 85%;
+    border: 1px solid rgba(255, 255, 255, 0.035);
+    border-radius: 9px;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(8, 12, 22, 0.82), rgba(6, 10, 18, 0.94)),
+        #070b13;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.025) inset,
+        0 24px 42px rgba(0, 0, 0, 0.16) inset;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+
+.app-window {
+    position: fixed;
+}
+
+.window-resizer {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    cursor: se-resize;
+}
+
+.iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+#task-bar {
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    background: rgba(12, 18, 35, 0.338);
+    border: 1px solid rgba(120, 141, 245, 0.18);
+    backdrop-filter: blur(18px) saturate(170%);
+    z-index: 9;
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 20%;
+    transition: transform 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+    border-radius: 10px;
+    box-shadow: 0 18px 40px rgba(6, 10, 28, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.015);
+    display: grid;
+    gap: 12px;
+    grid-template-rows: 100%;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 12px 16px;
+}
+
+#task-bar:hover {
+    transform: scale(1.02);
+    border-color: rgba(160, 180, 255, 0.28);
+}
+
+#task-bar::before {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    box-sizing: border-box;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.253), rgba(15, 15, 53, 0.461))
+}
+
+.tasBarItem {
+    background: rgba(20, 30, 58, 0.72);
+    border: 1px solid rgba(126, 147, 233, 0.18);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e9eef9;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    min-height: 48px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.tasBarItem:hover {
+    transform: scale(1.03);
+    filter: brightness(1.2);
+    box-shadow: 0 16px 30px rgba(15, 26, 72, 0.18);
+
+}
+
+#appDock {
+    display: grid;
+    grid-gap: 5px;
+    grid-auto-flow: column;
+    grid-auto-columns: 48px;
+    grid-template-columns: repeat(20, 1fr);
+    overflow: hidden;
+    overflow-x: auto;
+    box-sizing: border-box;
+    padding: 5px;
+    max-width: 100%;
+}
+
+.appDockApp {
+    height: 100%;
+    min-width: 48px;
+    background-color: rgba(98, 99, 192, 0.007);
+    border: 1px solid rgba(126, 147, 233, 0.18);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e9eef9;
+    transition: all 0.4s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: 0.3s ease;
+    background-image: url("./ui/default/setting.png");
+    background-size: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: invert(1)
+}
+
+.appDockApp:hover {
+    transform: scale(1.08);
+}
+
+#task-bar,
+.tasBarItem,
+#appDock {
+    overflow: visible;
+}
+
+
+
+
+
+#date {
+    box-sizing: border-box;
+    padding: 2px;
+    display: grid;
+    grid-gap: 2px;
+    height: 100%;
+    grid-template-rows: repeat(2, 20px);
+    grid-template-columns: 2fr 1fr;
+    grid-auto-flow: column;
+}
+
+#date-menu {
+    height: 100%;
+    grid-row: span 2;
+}
+
+.date-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(9, 9, 79, 0.372);
+    border: solid rgba(84, 84, 171, 0.651) 1px;
+    border-radius: 2px;
+    height: 20px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.date-container:hover {
+    transform: scale(1.1);
+}
+
+#batteryPercent {
+    --battery-level: attr(data-battery);
+    box-sizing: border-box;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-weight: 500;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    background: rgba(20, 20, 58, 0.119);
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+#batteryPercent:hover {
+    transform: scale(1.4);
+    width: 50%;
+    background: rgba(20, 20, 58, 0.847);
+    justify-content: left;
+    text-align: left;
+}
+
+#batteryPercent:hover::after {
+    content: var(--battery-level);
+    position: absolute;
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-weight: 500;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+
+
+
+.appDockApp:hover {
+    transform: scale(1.2);
+    z-index: 100;
+}
+
+
+.activeWindow {
+    filter: invert(1);
+    border-bottom: solid rgba(213, 51, 6, 0.72) 7px;
+
+}
+
+.multiOpen {
+    filter: invert(1);
+    border-bottom: solid rgba(16, 73, 143, 0.72) 7px;
+
+}
+
+.fullscreen {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s ease;
+    z-index: 999999999;
+}
+
+.minimized {
+    height: 56px !important;
+    overflow: hidden;
+}
+
+.minimized .window-frame-wrap,
+.minimized .window-resizer {
+    display: none;
+}
+
+.appDockApp {
+    --title: "App1"
+}
+
+.appDockApp::before {
+    content: var(--title);
+    font-size: 10px;
+    color: white;
+    font-weight: 500;
+    transition: 0.4s;
+    opacity: 0;
+    filter: invert(1);
+    position: absolute;
+    margin-bottom: 29px;
+    z-index: 9999999999;
+    white-space: nowrap;
+    background: rgba(20, 20, 58, 0.393);
+    padding: 2px;
+    border: solid rgba(255, 255, 255, 0.352) 1px;
+    border-radius: 5px;
+}
+
+/* Removed the " + .appDockApp" */
+.appDockApp:hover::before {
+    opacity: 1;
+}
+
+.defaultCont {
+    /* Sophisticated semi-transparent border */
+    border: solid rgba(255, 255, 255, 0.08) 1px;
+    background: rgba(255, 255, 255, 0.02);
+    /* Backdrop blur creates a high-end glassmorphism overlay effect */
+    backdrop-filter: blur(8px);
+    /* Keeps layout tight on wider screens */
+    transition: all 0.3s ease;
+}
+
+.defaultContS::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid rgba(58, 116, 152, 0.6);
+    border-left: 2px solid rgba(58, 116, 152, 0.6);
+}
+
+.activeWindow::before,
+.multiOpen::before {
+    content: var(--title);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 8px);
+    transform: translateX(-50%);
+    margin-bottom: 0;
+
+    font-size: 10px;
+    color: white;
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none;
+
+    background: rgba(20, 20, 58, 0.393);
+    padding: 5px;
+    border: solid rgba(255, 255, 255, 0.352) 1px;
+    border-radius: 6px;
+
+    opacity: 1;
+    z-index: 9999;
+}
+
+.multiOpen::before {
+    transition: 0.6s ease;
+    border-color: rgba(255, 255, 255, 0.352);
+    border-width: 3px;
+    background: rgba(255, 99, 6, 0.393);
+}
+
+.modernWindow {
+    transition: 0.1s ease;
+}
+
+.activeWindow:hover::before,
+.multiOpen:hover::before {
+    transition: all 0.7s ease-in-out;
+    z-index: 200;
+    box-sizing: content-box;
+    padding-inline: 10px;
+    color: rgb(150, 180, 207);
+    background: rgba(20, 20, 58, 0.95);
+}
+
+.fullscreen .window-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+@keyframes openWindow {
+    from {
+        transform: scale(0.01) rotateY(300deg);
+    }
+
+    to {
+        transform: scale(1) rotateY(0deg);
+        ;
+    }
+}
+
+@keyframes closeWindow {
+    from {
+        transform: scale(1) rotateY(0deg);
+    }
+
+    to {
+        transform: scale(0.01) rotateY(360deg);
+    }
+}
+
+@keyframes desktop {
+    from {
+        background-size: 250%;
+    }
+
+    to {
+        background-size: 110%;
+    }
+}

@@ -1,0 +1,173 @@
+:root {
+    --bg: #06070a;
+    --panel: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.12);
+    --text: #f3f6ff;
+    --muted: #9fb0c8;
+    --accent: #6dd3ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    background: radial-gradient(circle at top, #162235 0%, var(--bg) 55%);
+    padding: 24px;
+}
+
+.mastery-shell {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.mastery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 24px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+}
+
+.eyebrow {
+    margin: 0 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    font-size: 0.8rem;
+}
+
+.mastery-header h1 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+}
+
+.header-copy {
+    margin: 0;
+    max-width: 620px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.header-badge {
+    min-width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.mastery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.mastery-card {
+    padding: 18px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    min-height: 170px;
+}
+
+.mastery-card.featured {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(109, 211, 255, 0.16), rgba(255, 255, 255, 0.05));
+}
+
+.card-topline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.pill {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: rgba(109, 211, 255, 0.14);
+    color: var(--accent);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+}
+
+.pill.subtle {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--muted);
+}
+
+.mastery-card h2,
+.mastery-card h3 {
+    margin: 0 0 8px;
+}
+
+.mastery-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.mastery-list {
+    padding: 20px 24px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.mastery-list h2 {
+    margin: 0 0 14px;
+}
+
+.skill-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-row:last-child {
+    border-bottom: 0;
+}
+
+.skill-row strong {
+    color: var(--text);
+}
+
+.skill-row span {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 14px;
+    }
+
+    .mastery-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mastery-grid {
+        grid-template-columns: 1fr;
+    }
+}

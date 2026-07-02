@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="animations/nav.css">
+</head>
+
+<body>
+    <div class="desktop" role="main">
+
+
+        <div id="introCover">
+            <div class="intro-shell">
+                <div class="introCoverCont intro-hero" id="introCoverHead">
+                    <div>
+                        <p class="intro-eyebrow">Portfolio OS</p>
+                        <h1 id="introHeader">Welcome To my portoflio</h1>
+                        <p class="intro-subtitle">A browser desktop built for projects, motion, and interactive UI.</p>
+                    </div>
+                    <button class="defaultBtn" id="closeCover">Enter OS</button>
+                </div>
+
+                <div class="intro-grid">
+                    <section class="introCoverCont intro-panel intro-panel-wide">
+                        <div class="introCoverHeader">
+                            <span class="intro-kicker">Start Here</span>
+                            <h3 id="introIntro">Introduction</h3>
+                        </div>
+                        <div class="introContInfo">
+                            <p id="introIntroP">Hi, I'm a front-end portfolio creator focused on interactive UI,
+                                responsive design, and polished animations.</p>
+                        </div>
+                        <div class="intro-tags" aria-label="Portfolio focus areas">
+                            <span>JavaScript</span>
+                            <span>Window UI</span>
+                            <span>Animation</span>
+                            <span>Portfolio OS</span>
+                        </div>
+                    </section>
+
+                    <section class="introCoverCont intro-panel">
+                        <div class="introCoverHeader">
+                            <span class="intro-kicker">Explore</span>
+                            <h3>How to Use</h3>
+                        </div>
+                        <ul class="intro-list">
+                            <li>Open apps from the dock to move through the portfolio.</li>
+                            <li>Drag, resize, minimize, and stack windows on the desktop.</li>
+                            <li>Use Settings, Mastery, Projects, and Simplified for focused views.</li>
+                        </ul>
+                    </section>
+
+                    <section class="introCoverCont intro-panel">
+                        <div class="introCoverHeader">
+                            <span class="intro-kicker">System</span>
+                            <h3>Live Features</h3>
+                        </div>
+                        <div class="intro-feature-list">
+                            <div><strong>Dock</strong><span>Tracks active apps</span></div>
+                            <div><strong>Windows</strong><span>Move, resize, close</span></div>
+                            <div><strong>Feedback</strong><span>Motion and audio cues</span></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="task-bar" class="defaultCont">
+            <div id="menu" class="tasBarItem defaultCont defaultContS">Menu</div>
+
+            <div id="appDock" class="tasBarItem defaultCont defaultContS">
+
+            </div>
+
+            <div id="date" class="tasBarItem defaultCont defaultContS">
+                <div id="date-time" class="date-container defaultCont ">
+                    <h6 id="date-time-hour">11:54 PM</h6>
+                    <h6 id="batteryPercent">100%</h6>
+                </div>
+                <div id="date-date" class="date-container defaultCont">
+                    <h6 id="date-date-date">6/02/2023</h6>
+                </div>
+                <div id="date-menu" class="date-container defaultCont">
+                    <h6>Open menu</h6>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="./index.js" type="module"></script>
+</body>
+
+</html>
